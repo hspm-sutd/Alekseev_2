@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+    <style type="text/css">
+        p {
+            font-family: Helvetica;
+            font-size: 14pt;
+        }
+        .blue_text {
+            font-family: Times New Roman;
+            color: blue;
+        }
+    </style>
+
+</head>
+<body>
+	<div id="grad"><p id="text1">Какой то текст</p></div>
+	<div><p>Какой то текст</p></div>
+
+<button id="knopka_1">Задание 1</button>
+<button id="knopka_2">Задание 2</button>
+<button onclick="knopka_3()"> Задание 3 </button>
+
+	<script type="text/javascript">
+		function sum() {
+			let nums = prompt('Введите числа через пробел');
+			nums = nums.split(' ');
+			var s = 0;
+			for (let n of nums) {
+				s += Number(n);
+			};
+			alert('Сумма чисел = ' + s);
+		};
+		knopka_1.addEventListener('click', sum);
+	</script>
+
+    <script type="text/javascript">
+        function BlueText() {
+            var paragraphs = document.querySelectorAll('p');
+            for (let paragraph of paragraphs) {
+                paragraph.classList.toggle('blue_text');
+            };
+        };
+        knopka_2.addEventListener('click', BlueText);
+    </script>
+
+    <script type="text/javascript">
+    	function knopka_3() {
+   			document.getElementById('grad').style.background = "linear-gradient(LightCoral, Red)";
+   			document.getElementById('text1').style.background = "white";
+   			document.getElementById('text1').style.mixBlendMode = "screen";
+   			document.getElementById('text1').style.color = "black";
+   		};
+   </script>
+
+</body>
+</html>
